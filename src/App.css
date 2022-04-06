@@ -7,17 +7,15 @@
   text-align: center;
 }
 
-
-
 body {
   background-color: #282c34;
   height: 100vh;
-
 }
 
 .App-logo {
-  height: 40vmin;
+  height: 80vmin;
   pointer-events: none;
+  position: absolute;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -27,10 +25,11 @@ body {
 }
 
 .App-header {
-  /*min-height: 100vh;*/
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -48,7 +47,6 @@ body {
   }
 }
 
-
 *,
 ::before,
 ::after {
@@ -64,11 +62,13 @@ body {
   max-width: 500px;
   box-shadow: 5px 5px 15px black;
   margin: 10px;
+  z-index: 1;
+  backdrop-filter: blur(10px);
 }
 
 h1 {
-  padding: 0;
-  margin: 0 0 20px 0;
+  padding: 10px;
+  margin: 0 0 10px 0;
   border-radius: 10px;
   box-shadow: 0 0 15px #60d9f9;
   border: 2px solid #60d9f9;
@@ -104,7 +104,7 @@ form {
     transform: translateY(130%);
   }
 
-  to  {
+  to {
     opacity: 1;
     transform: translateY(0);
   }
@@ -144,7 +144,6 @@ form {
   box-shadow: 0 0 0 2px black inset;
 }
 
-
 .todo__btn {
   padding: 5px 10px;
   border: none;
@@ -177,7 +176,7 @@ form {
 }
 
 .todo__btn-add-task:hover,
-.todo__btn-add-task:focus{
+.todo__btn-add-task:focus {
   background-color: #00c7ff;
   outline: none;
 }
@@ -193,4 +192,3 @@ form {
 .todo__btn-add-task:focus-visible {
   text-decoration: underline;
 }
-

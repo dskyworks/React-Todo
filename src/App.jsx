@@ -1,6 +1,7 @@
-import logo from './logo.svg';
+import logo from './assets/logo.svg';
 import './App.css';
 import {useRef, useState} from "react";
+import TodoInput from "./components/TodoInput";
 
 function App() {
   const [inputValue, setInputValue] = useState('');
@@ -15,7 +16,7 @@ function App() {
   function handleAddTask(e) {
     e.preventDefault();
     inputRef.current.focus();
-    if (inputValue.match(/^\S+/)) {
+    if (inputValue.trim() !== '') {
       const newTask = {
         done: false,
         value: inputValue
@@ -45,7 +46,6 @@ function App() {
       key={idx}
       className="todo__item">
       <span
-
         onClick={(e) => handleToggleDoneTask(e, t)}
         className={
           t.done
@@ -68,15 +68,11 @@ function App() {
           <ul className="todo__list">
             {taskList}
           </ul>
-          <form onSubmit={handleAddTask}>
-            <input
-              ref={inputRef}
-              className="todo__input"
-              value={inputValue}
-              onChange={handleInputUpdate}
-              type="text" autoFocus={true} placeholder="Задача" />
-            <button className="todo__btn todo__btn-add-task">Добавить</button>
-          </form>
+          <TodoInput
+            handleAddTask={handleAddTask}
+            inputRef={inputRef}
+            inputValue={inputValue}
+            handleInputUpdate={handleInputUpdate} />
         </div>
       </header>
     </div>
