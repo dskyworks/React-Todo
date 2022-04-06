@@ -1,0 +1,196 @@
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("./assets/JetBrainsMono-Regular.woff2") format("woff2");
+}
+
+.App {
+  text-align: center;
+}
+
+
+
+body {
+  background-color: #282c34;
+  height: 100vh;
+
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  /*min-height: 100vh;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+*,
+::before,
+::after {
+  font-family: "JetBrains Mono", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.todo {
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 500px;
+  box-shadow: 5px 5px 15px black;
+  margin: 10px;
+}
+
+h1 {
+  padding: 0;
+  margin: 0 0 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #60d9f9;
+  border: 2px solid #60d9f9;
+  user-select: none;
+  background-color: #1f1f1f;
+  color: #60d9f9;
+  text-shadow: 0 0 5px #60d9f9;
+}
+
+form {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.todo__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+}
+
+.todo__item {
+  margin: 10px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  animation: item 0.3s alternate ease-out;
+}
+
+@keyframes item {
+  from {
+    opacity: 0;
+    transform: translateY(130%);
+  }
+
+  to  {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.todo__name {
+  word-wrap: break-word;
+  border-radius: 10px 0 0 10px;
+  background-color: aliceblue;
+  color: #282c34;
+  padding: 5px;
+  width: 90%;
+  cursor: default;
+  user-select: none;
+}
+
+.todo__name--done {
+  text-decoration: line-through;
+  color: #c9c9c9;
+}
+
+.todo__input {
+  border: none;
+  flex-shrink: 1;
+  border-radius: 10px 0 0 10px;
+  background-color: aliceblue;
+  padding: 0 10px 0 10px;
+  outline: 0;
+  width: 80%;
+  font-size: 20px;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.todo__input:focus {
+  background-color: #1f1f1f;
+  color: aliceblue;
+  box-shadow: 0 0 0 2px black inset;
+}
+
+
+.todo__btn {
+  padding: 5px 10px;
+  border: none;
+  font-size: 20px;
+  white-space: pre;
+  color: #282c34;
+}
+
+.todo__btn-add-task {
+  background-color: #60d9f9;
+  border-radius: 0 5px 5px 0;
+  transition: background-color 0.1s;
+}
+
+.todo__btn-delete-task {
+  border-radius: 0 5px 5px 0;
+  background-color: #f96060;
+  width: 10%;
+  transition: background-color 0.1s;
+}
+
+.todo__btn-delete-task:hover,
+.todo__btn-delete-task:focus {
+  background-color: #e74040;
+  outline: none;
+}
+
+.todo__btn-delete-task:active {
+  background-color: #ff0000;
+}
+
+.todo__btn-add-task:hover,
+.todo__btn-add-task:focus{
+  background-color: #00c7ff;
+  outline: none;
+}
+
+.todo__btn-add-task:active {
+  background-color: #08ff00;
+}
+
+.todo__btn-delete-task:focus-visible {
+  text-decoration: underline;
+}
+
+.todo__btn-add-task:focus-visible {
+  text-decoration: underline;
+}
+
