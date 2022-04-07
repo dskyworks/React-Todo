@@ -48,13 +48,13 @@ function App() {
       task={task}
       handleDeleteTask={handleDeleteTask}
     />
-    ))
+  ))
 
-    useEffect(() => {
-      localStorage.setItem('items', JSON.stringify(tasks))
-    }, [tasks])
+  useEffect(() => {
+    localStorage.setItem('items', JSON.stringify(tasks))
+  }, [tasks])
 
-    return (
+  return (
     <div className="App">
       <header className="App-header">
         <div className="todo">

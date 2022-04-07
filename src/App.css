@@ -52,7 +52,6 @@ body {
   max-width: 500px;
   box-shadow: 5px 5px 15px black;
   z-index: 1;
-  backdrop-filter: blur(10px);
 }
 
 h1 {
@@ -106,13 +105,24 @@ form {
   background-color: aliceblue;
   color: #282c34;
   padding: 5px;
-  width: 100%;
+  width: calc(100% - 36px);
   cursor: pointer;
+  outline: 0;
+  transition: background-color 0.3s, box-shadow 0.3s;
   /*user-select: none;*/
+}
+
+.todo__name:focus-visible {
+  background-color: #1f1f1f;
+  color: aliceblue;
 }
 
 .todo__name--done {
   text-decoration: line-through;
+  color: #c9c9c9;
+}
+
+.todo__name--done:focus-visible {
   color: #c9c9c9;
 }
 
@@ -155,6 +165,7 @@ form {
   align-items: center;
   border-radius: 0 5px 5px 0;
   background-color: #f96060;
+  /*background-color: #797979;*/
   width: 36px;
   transition: background-color 0.1s;
 }
@@ -187,10 +198,6 @@ form {
 
 .todo__btn-add-task:active {
   background-color: #08ff00;
-}
-
-.todo__btn-delete-task:focus-visible {
-  text-decoration: underline;
 }
 
 .todo__btn-add-task:focus-visible {

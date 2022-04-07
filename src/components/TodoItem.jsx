@@ -1,8 +1,18 @@
 const TodoItem = ({handleToggleDoneTask, task, handleDeleteTask}) => {
+
+  const keyPress = (e) => {
+    if (e.code === 'Space' || e.code === 'Enter') {
+      e.preventDefault();
+      handleToggleDoneTask(e, task);
+    }
+  }
+
   return (
     <li
       className="todo__item">
       <span
+        tabIndex={0}
+        onKeyDown={keyPress}
         onClick={(e) => handleToggleDoneTask(e, task)}
         className={
           task.done
