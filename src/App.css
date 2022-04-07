@@ -10,18 +10,7 @@
 body {
   background-color: #282c34;
   height: 100vh;
-}
-
-.App-logo {
-  height: 80vmin;
-  pointer-events: none;
-  position: absolute;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+  padding: 10px;
 }
 
 .App-header {
@@ -59,9 +48,9 @@ body {
 .todo {
   border-radius: 10px;
   padding: 20px;
+  width: 100%;
   max-width: 500px;
   box-shadow: 5px 5px 15px black;
-  margin: 10px;
   z-index: 1;
   backdrop-filter: blur(10px);
 }
@@ -96,6 +85,7 @@ form {
   display: flex;
   justify-content: space-between;
   animation: item 0.3s alternate ease-out;
+  user-select: none;
 }
 
 @keyframes item {
@@ -116,9 +106,9 @@ form {
   background-color: aliceblue;
   color: #282c34;
   padding: 5px;
-  width: 90%;
-  cursor: default;
-  user-select: none;
+  width: 100%;
+  cursor: pointer;
+  /*user-select: none;*/
 }
 
 .todo__name--done {
@@ -133,7 +123,7 @@ form {
   background-color: aliceblue;
   padding: 0 10px 0 10px;
   outline: 0;
-  width: 80%;
+  width: 100%;
   font-size: 20px;
   transition: background-color 0.3s, box-shadow 0.3s;
 }
@@ -150,6 +140,7 @@ form {
   font-size: 20px;
   white-space: pre;
   color: #282c34;
+  user-select: none;
 }
 
 .todo__btn-add-task {
@@ -161,7 +152,7 @@ form {
 .todo__btn-delete-task {
   border-radius: 0 5px 5px 0;
   background-color: #f96060;
-  width: 10%;
+  width: 36px;
   transition: background-color 0.1s;
 }
 

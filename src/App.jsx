@@ -1,11 +1,10 @@
-import logo from './assets/logo.svg';
 import './App.css';
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import TodoInput from "./components/TodoInput";
 
 function App() {
   const [inputValue, setInputValue] = useState('');
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(JSON.parse(localStorage.getItem('items')) || []);
 
   const inputRef = useRef(null);
 
@@ -35,7 +34,6 @@ function App() {
     setTasks([...tasks.map(task => {
       if (task === taskToToggleDone) {
         task.done = !task.done;
-        console.log(taskToToggleDone)
       }
       return task
     })])
@@ -59,10 +57,13 @@ function App() {
       </button>
     </li>))
 
-  return (
+    useEffect(() => {
+      localStorage.setItem('items', JSON.stringify(tasks))
+    }, [tasks])
+
+    return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <div className="todo">
           <h1>Todo App</h1>
           <ul className="todo__list">

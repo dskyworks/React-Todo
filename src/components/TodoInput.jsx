@@ -3,6 +3,7 @@ const TodoInput = (props) => {
     <form onSubmit={props.handleAddTask}>
       <input
         ref={props.inputRef}
+        required={true}
         className="todo__input"
         value={props.inputValue}
         onChange={props.handleInputUpdate}
