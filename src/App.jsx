@@ -1,6 +1,8 @@
 import './App.css';
 import {useEffect, useRef, useState} from "react";
 import TodoInput from "./components/TodoInput";
+import TodoList from "./components/TodoList";
+import TodoItem from "./components/TodoItem";
 
 function App() {
   const [inputValue, setInputValue] = useState('');
@@ -39,23 +41,14 @@ function App() {
     })])
   }
 
-  const taskList = tasks.map((t, idx) => (
-    <li
+  const taskList = tasks.map((task, idx) => (
+    <TodoItem
       key={idx}
-      className="todo__item">
-      <span
-        onClick={(e) => handleToggleDoneTask(e, t)}
-        className={
-          t.done
-            ? "todo__name todo__name--done"
-            : "todo__name"}>{t.value}
-      </span>
-      <button
-        className="todo__btn todo__btn-delete-task"
-        onClick={() => handleDeleteTask(t)}>
-        x
-      </button>
-    </li>))
+      handleToggleDoneTask={handleToggleDoneTask}
+      task={task}
+      handleDeleteTask={handleDeleteTask}
+    />
+    ))
 
     useEffect(() => {
       localStorage.setItem('items', JSON.stringify(tasks))
@@ -66,9 +59,7 @@ function App() {
       <header className="App-header">
         <div className="todo">
           <h1>Todo App</h1>
-          <ul className="todo__list">
-            {taskList}
-          </ul>
+          <TodoList taskList={taskList} />
           <TodoInput
             handleAddTask={handleAddTask}
             inputRef={inputRef}

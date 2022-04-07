@@ -150,10 +150,23 @@ form {
 }
 
 .todo__btn-delete-task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border-radius: 0 5px 5px 0;
   background-color: #f96060;
   width: 36px;
   transition: background-color 0.1s;
+}
+
+.todo__btn-delete-task::before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-image: url('./assets/trash.svg');
 }
 
 .todo__btn-delete-task:hover,
