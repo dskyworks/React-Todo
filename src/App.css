@@ -82,17 +82,14 @@ form {
 .todo__item {
   margin: 10px 0 10px;
   display: flex;
+  transform: translateY(128%);
   justify-content: space-between;
-  animation: item 0.3s alternate ease-out;
+  animation: item 0.3s forwards ease-out;
   user-select: none;
+  opacity: 0;
 }
 
 @keyframes item {
-  from {
-    opacity: 0;
-    transform: translateY(130%);
-  }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -197,7 +194,7 @@ form {
 }
 
 .todo__btn-add-task:active {
-  background-color: #08ff00;
+  background-color: #00a6ff;
 }
 
 .todo__btn-add-task:focus-visible {
