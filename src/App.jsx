@@ -55,8 +55,8 @@ function App() {
   }, [tasks])
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="app">
+      <header className="app-header">
         <div className="todo">
           <h1>Todo App</h1>
           <TodoList taskList={taskList} />

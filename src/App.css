@@ -13,7 +13,7 @@ body {
   padding: 10px;
 }
 
-.App-header {
+.app-header {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -23,7 +23,7 @@ body {
   color: white;
 }
 
-.App-link {
+.app-link {
   color: #61dafb;
 }
 
@@ -64,6 +64,7 @@ h1 {
   background-color: #1f1f1f;
   color: #60d9f9;
   text-shadow: 0 0 5px #60d9f9;
+  text-align: center;
 }
 
 form {
